@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
     createButton.addEventListener("click", createSubscriber);
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const updateButton = document.getElementById("update-button");
     const rollInput = document.getElementById("roll-input2");
@@ -166,33 +165,49 @@ document.addEventListener("DOMContentLoaded", () => {
             year: yearInput.value
         };
 
-        // Make a PATCH request to update the subscriber
-        fetch(`${apiUrl}/${rollInput.value}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(updatedSubscriber)
-        })
-        .then((response) => response.json())
-        .then((updatedSubscriber) => {
-            // Display the updated subscriber in the list
-            updateDetails.innerHTML = `Updated Entry of ${updatedSubscriber.name} `;
+        // Make a GET request to check if the subscriber entry exists
+        fetch(`${apiUrl}/${rollInput.value}`)
+            .then((response) => {
+                if (!response.ok) {
+                    // If the entry does not exist, show a popup
+                    alert("Entry not present!");
+                    throw new Error("Entry not present");
+                }
+                return response.json();
+            })
+            .then(() => {
+                // Make a PATCH request to update the subscriber
+                fetch(`${apiUrl}/${rollInput.value}`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(updatedSubscriber)
+                })
+                .then((response) => response.json())
+                .then((updatedSubscriber) => {
+                    // Display the updated subscriber in the list
+                    updateDetails.innerHTML = `Updated Entry of ${updatedSubscriber.name} `;
 
-            // Clear the input fields
-            rollInput.value = "";
-            nameInput.value = "";
-            streamInput.value = "";
-            yearInput.value = "";
-        })
-        .catch((error) => {
-            console.error("Error updating subscriber:", error);
-        });
+                    // Clear the input fields
+                    rollInput.value = "";
+                    nameInput.value = "";
+                    streamInput.value = "";
+                    yearInput.value = "";
+                })
+                .catch((error) => {
+                    console.error("Error updating subscriber:", error);
+                });
+            })
+            .catch((error) => {
+                console.error("Error checking if subscriber exists:", error);
+            });
     }
 
     // Add an event listener to the update button
     updateButton.addEventListener("click", updateSubscriber);
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const deleteButton = document.getElementById("delete-button");
