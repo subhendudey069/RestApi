@@ -2,13 +2,19 @@ GET  http://localhost:3000/subscribers
 
 ###
 
-GET  http://localhost:3000/subscribers/64f86552583e3631c600fe3e
+GET  http://localhost:3000/subscribers/1069
 
 ###
 
 POST http://localhost:3000/subscribers
 Content-Type: application/json
-{
-    "name" : "Subhendu Dey",
-    "subscribedToChannel" : "NrXen Dev"
+
+{   "roll" : "1069",
+    "name" : "Mainak Majumder",
+    "stream" : "ECE",
+    "year" : "2019"
 }
+
+###
+
+DELETE   http://localhost:3000/subscribers/1034

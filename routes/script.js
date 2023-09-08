@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (subscriber) {
                     // Display the subscriber details
                     subscriberDetails.innerHTML = `
-                        <h2>Subscriber Details</h2>
+                        <h2>Students Details</h2>
                         <p>Roll: ${subscriber.roll}</p>
                         <p>Name: ${subscriber.name}</p>
                         <p>Stream: ${subscriber.stream}</p>
@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const streamInput = document.getElementById("stream-input2");
     const yearInput = document.getElementById("year-input2");
     const subscriberList = document.getElementById("subscriber-list");
+    const updateDetails = document.getElementById("subscriber-update-details");
 
     // Replace this URL with the actual URL of your API
     const apiUrl = "http://localhost:3000/subscribers";
@@ -176,9 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((response) => response.json())
         .then((updatedSubscriber) => {
             // Display the updated subscriber in the list
-            const listItem = document.createElement("li");
-            listItem.textContent = `Updated Entry of ${updatedSubscriber.name} `;
-            subscriberList.appendChild(listItem);
+            updateDetails.innerHTML = `Updated Entry of ${updatedSubscriber.name} `;
 
             // Clear the input fields
             rollInput.value = "";

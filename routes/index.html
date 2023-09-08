@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Subscriber List</title>
+    <title>NrXen Dev Factory</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div>
-    <h2>Subscriber List</h2>
-    <button id="fetch-All">Show All Entries</button>
-    <ul id="subscriber-list">
-        <!-- All Subscribers will be displayed here -->
-    </ul><br>
-    <h2>Search Entry by Roll</h2>
-    <input type="text" id="id-input" placeholder="Enter Roll">
-    <button id="submit-button">Search</button>
-    <div id="subscriber-details">
-        <!-- Subscriber details will be displayed here -->
-    </div><br>
-    <h2>Create New Entry</h2>
-    <div >
-        <label for="roll">Roll:</label>
-        <input type="text" id="roll-input" placeholder="Enter Roll">
-    </div>
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name-input" placeholder="Enter Name">
-    </div>
-    <div>
-        <label for="stream">Stream:</label>
-        <input type="text" id="stream-input" placeholder="Enter Stream">
-    </div>
-    <div>
-        <label for="year">Year:</label>
-        <input type="text" id="year-input" placeholder="Enter Year">
-    </div>
-    <br>
-    <button id="create-button">Create</button>
-    <div id="create-subscriber"></div>
-    <br>
-    <h2>Update Entry</h2>
-    <div>
-        <label for="roll">Roll:</label>
-        <input type="text" id="roll-input2" placeholder="Enter Roll">
-    </div>
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name-input2" placeholder="Enter Name">
-    </div>
-    <div>
-        <label for="stream">Stream:</label>
-        <input type="text" id="stream-input2" placeholder="Enter Stream">
-    </div>
-    <div>
-        <label for="year">Year:</label>
-        <input type="text" id="year-input2" placeholder="Enter Year">
-    </div><br>
-    <button id="update-button">Update</button>
-    <h2>Delete Entry</h2>
-    <div>
-        <label for="roll">Roll:</label>
-        <input type="text" id="roll-input3" placeholder="Enter Roll">
-        <button id="delete-button">Delete</button>
-    </div>
-    <ul id="subscriber-list2">
-        <!-- Subscribers will be displayed here -->
-    </ul>
+    <div class="box"><h1>NrXen Student Management System</h1></div>
+    <div class="container">
+        <!-- Students List Box -->
+        <div class="box">
+            <h2>Students List</h2>
+            <button id="fetch-All">Show All Entries</button>
+            <ul id="subscriber-list">
+                <!-- All Students will be displayed here -->
+            </ul>
+        </div>
+        <div class="box">
+        <h2>Search Entry by Roll</h2>
+            <input type="text" id="id-input" placeholder="Enter Roll">
+            <button id="submit-button">Search</button>
+            <div id="subscriber-details">
+            <!-- Students details will be displayed here -->
+            </div><br>
+        </div>
 
+        <!-- Create New Entry Box -->
+        <div class="box">
+            <h2>Create New Entry</h2>
+            <label for="roll">Roll:</label>
+            <input type="text" id="roll-input" placeholder="Enter Roll">
+            <label for="name">Name:</label>
+            <input type="text" id="name-input" placeholder="Enter Name">
+            <label for="stream">Stream:</label>
+            <input type="text" id="stream-input" placeholder="Enter Stream">
+            <label for="year">Year:</label>
+            <input type="text" id="year-input" placeholder="Enter Year">
+            <button id="create-button">Create</button>
+            <div id="create-subscriber"></div>
+        </div>
 
+        <!-- Update Entry Box -->
+        <div class="box">
+            <h2>Update Entry</h2>
+            <label for="roll">Roll:</label>
+            <input type="text" id="roll-input2" placeholder="Enter Roll">
+            <label for="name">Name:</label>
+            <input type="text" id="name-input2" placeholder="Enter Name">
+            <label for="stream">Stream:</label>
+            <input type="text" id="stream-input2" placeholder="Enter Stream">
+            <label for="year">Year:</label>
+            <input type="text" id="year-input2" placeholder="Enter Year">
+            <button id="update-button">Update</button>
+            <div id="subscriber-update-details">
+                <!-- update details will be displayed here -->
+            </div>
+        </div>
 
+        <!-- Delete Entry Box -->
+        <div class="box">
+            <h2>Delete Entry</h2>
+            <label for="roll">Roll:</label>
+            <input type="text" id="roll-input3" placeholder="Enter Roll">
+            <button id="delete-button">Delete</button>
+            <ul id="subscriber-list2">
+                <!-- Students will be displayed here -->
+            </ul>
+        </div>
+    </div>
 
     <script src="/routes/script.js"></script>
 </body>
