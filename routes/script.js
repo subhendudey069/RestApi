@@ -9,12 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     function fetchSubscribers() {
         // Clear the existing list items
         subscriberList.innerHTML = "";
-
+    
         // Fetch data from your API
         fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
-                // Loop through the fetched data and create list items
+                // Sort the data by the "Roll" field
+                data.sort((a, b) => a.roll - b.roll);
+    
+                // Loop through the fetched and sorted data to create list items
                 data.forEach((subscriber) => {
                     const listItem = document.createElement("li");
                     listItem.textContent = `Roll : ${subscriber.roll}, Name : ${subscriber.name}, Stream : ${subscriber.stream}, Year : ${subscriber.year}`;
@@ -25,10 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error("Error fetching data:", error);
             });
     }
-
+    
     // Add an event listener to the fetch button
-    fetchButton.addEventListener("click", fetchSubscribers);
-});
+    fetchButton.addEventListener("click", fetchSubscribers);    
+    });
 
 
 document.addEventListener("DOMContentLoaded", () => {

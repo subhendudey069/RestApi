@@ -21,9 +21,24 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ccc;
 }
 
 .box {
+    flex-basis: calc(50% - 20px); /* Adjust width based on your preference */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content horizontally */
+    text-align: left; /* Center align text horizontally */
+    background-color: #ddd;
+}
+.box-heading {
     flex-basis: calc(50% - 20px); /* Adjust width based on your preference */
     padding: 20px;
     margin-bottom: 20px;
@@ -34,7 +49,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center align content horizontally */
-    text-align: center; /* Center align text horizontally */
+    text-align: left; /* Center align text horizontally */
+    background-color:coral;
+}
+.showAll-box {
+    flex-basis: calc(70% - 20px); /* Adjust width based on your preference */
+    padding: 20px;
+    margin: 0 auto; /* Center horizontally */
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content horizontally */
+    text-align: left; /* Center align text horizontally */
+    background-color: #ddd;
+    
 }
 
 h2 {
@@ -72,5 +104,6 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
-/* Add specific styles for other elements as needed */
+body {
+    background-color:aquamarine;
+}

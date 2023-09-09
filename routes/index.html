@@ -5,24 +5,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class="box"><h1>NrXen Student Management System</h1></div>
+    <div class="box-heading"><h1>NrXen Student Management System</h1></div>
     <div class="container">
-        <!-- Students List Box -->
-        <div class="box">
-            <h2>Students List</h2>
-            <button id="fetch-All">Show All Entries</button>
-            <ul id="subscriber-list">
-                <!-- All Students will be displayed here -->
-            </ul>
-        </div>
-        <div class="box">
-        <h2>Search Entry by Roll</h2>
-            <input type="text" id="id-input" placeholder="Enter Roll">
-            <button id="submit-button">Search</button>
-            <div id="subscriber-details">
-            <!-- Students details will be displayed here -->
-            </div><br>
-        </div>
 
         <!-- Create New Entry Box -->
         <div class="box">
@@ -55,15 +39,31 @@
                 <!-- update details will be displayed here -->
             </div>
         </div>
+        <div class="box">
+            <h2>Search Entry by Roll</h2>
+                <input type="text" id="id-input" placeholder="Enter Roll">
+                <button id="submit-button">Search</button>
+                <div id="subscriber-details">
+                <!-- Students details will be displayed here -->
+                </div><br>
+        </div>
 
         <!-- Delete Entry Box -->
-        <div class="box">
+        <div class="box" >
             <h2>Delete Entry</h2>
             <label for="roll">Roll:</label>
             <input type="text" id="roll-input3" placeholder="Enter Roll">
             <button id="delete-button">Delete</button>
             <ul id="subscriber-list2">
                 <!-- Students will be displayed here -->
+            </ul>
+        </div>
+        <!-- Students List Box -->
+        <div class="showAll-box">
+            <h2>Students List</h2>
+            <button id="fetch-All">Show All Entries</button>
+            <ul id="subscriber-list">
+                <!-- All Students will be displayed here -->
             </ul>
         </div>
     </div>
